@@ -1,6 +1,0 @@
-#ifndef GETOPT_H_INCLUDED
-#define GETOPT_H_INCLUDED
-
-
-
-#endif // GETOPT_H_INCLUDED

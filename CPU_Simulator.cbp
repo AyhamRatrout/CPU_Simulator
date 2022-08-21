@@ -12,7 +12,10 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++1z" />
 					<Add option="-g" />
+					<Add directory="Headers" />
+					<Add directory="Sources" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +25,10 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++1z" />
+					<Add directory="include" />
+					<Add directory="Headers" />
+					<Add directory="Sources" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -30,9 +37,17 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++1z" />
 			<Add option="-fexceptions" />
+			<Add directory="Headers" />
+			<Add directory="Sources" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="Headers/Queue.h" />
+		<Unit filename="Headers/Task.h" />
+		<Unit filename="Headers/getopt.h" />
+		<Unit filename="Sources/Queue.cpp" />
+		<Unit filename="Sources/Task.cpp" />
+		<Unit filename="Sources/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
