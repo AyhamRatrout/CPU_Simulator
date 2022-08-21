@@ -5,12 +5,13 @@ Queue::Queue (int capacity) :
     m_capacity(capacity),
     m_size(0),
     m_front(0),
-    m_rear(-1)
+    m_rear(-1),
+    m_tasks()
 {
-
+    this->m_tasks[capacity];
 }
 
-void Queue::enqueue(Task task) {
+void Queue::enqueue(Task *task) {
     if (this->isFull()) {
         std::cerr << "Invalid operation! Cannot queue an already full queue." << std::endl;
         return;
@@ -20,7 +21,7 @@ void Queue::enqueue(Task task) {
     if (this->m_rear == this->m_capacity) {
         this->m_rear = 0;
     }
-    this->m_tasks.push_back(&task);
+    this->m_tasks[this->m_rear] = task;
     return;
 }
 
@@ -30,7 +31,6 @@ void Queue::dequeue() {
         return;
     }
     Task *task = this->m_tasks[this->m_front];
-    this->m_tasks.erase(this->m_tasks.begin() + this->m_front);
     delete task;
     this->m_size--;
     this->m_front++;
@@ -38,5 +38,16 @@ void Queue::dequeue() {
         this->m_front = 0;
     }
     return;
-
 }
+
+Task *Queue::getFront() {
+    if (this->isEmpty()) {
+        std::cerr << "Invalid operation! The queue is empty." << std::endl;
+        return nullptr;
+    }
+    return this->m_tasks[this->m_front];
+}
+
+
+
+
