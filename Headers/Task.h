@@ -12,9 +12,9 @@ class Task
             m_PID(++s_startingPID),
             m_burst(1 + rand() % taskBurst) {}
         ~Task() {}
-        unsigned int getPriority() {if (this != nullptr) return this->m_priority;}
-        unsigned int getPID() {if(this != nullptr) return this->m_PID;}
-        unsigned int getBurst() {if(this != nullptr) return this->m_burst;}
+        int getPriority() {return (nullptr != this) ? this->m_priority : -1;}
+        int getPID() {return (nullptr != this) ? this->m_PID : -1;}
+        int getBurst() {return (nullptr != this) ? this->m_burst : -1;}
         void decrementBurst() {if(this != nullptr) this->m_burst--;}
 
     protected:

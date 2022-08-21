@@ -8,7 +8,7 @@ Queue::Queue (int capacity) :
     m_rear(-1),
     m_tasks()
 {
-    this->m_tasks[capacity];
+    this->m_tasks[capacity] = {};
 }
 
 void Queue::enqueue(Task *task) {

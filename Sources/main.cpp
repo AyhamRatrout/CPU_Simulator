@@ -21,7 +21,7 @@ int main()
     std::cout << q->getSize() << std::endl;
 
     q->dequeue();
-    std::cout << q->getFront() << std::endl;
+    std::cout << q->getFront()->getPID() << std::endl;
     std::cout << q->getSize() << std::endl;
 
     q->enqueue(t3);
