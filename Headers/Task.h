@@ -1,5 +1,6 @@
 #ifndef TASK_H
 #define TASK_H
+
 #include <stdlib.h>
 
 static int s_startingPID = -1;
