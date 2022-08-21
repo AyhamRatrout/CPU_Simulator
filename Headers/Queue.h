@@ -6,15 +6,12 @@
 class Queue {
 
     public:
-        Queue(int capacity) :
-            m_capacity(capacity),
-            m_size(0),
-            m_front(0),
-            m_rear(-1) {}
+        Queue(int capacity);
         ~Queue() {}
         bool isEmpty() {return this->m_size == 0;}
         bool isFull() {return this->m_size == this->m_capacity;}
         int getSize() {return this->m_size;}
+
     protected:
 
     private:
