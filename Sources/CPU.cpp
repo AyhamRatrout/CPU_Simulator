@@ -12,7 +12,6 @@ CPU::CPU(unsigned int maximumPriority, unsigned int maximumBurst, unsigned int c
     m_currentTask(nullptr),
     m_runQueue()
 {
-    this->m_runQueue[maximumPriority] = {};
 }
 
 void CPU::initializeRunQueue(unsigned int maximumPriority, unsigned int maximumCapacity) {

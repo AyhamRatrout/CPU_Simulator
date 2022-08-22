@@ -12,7 +12,7 @@ class Task
         Task(unsigned int maximumTaskPriority, unsigned int maximumTaskBurst) :
             m_priority(std::rand() % maximumTaskPriority),
             m_PID(++s_startingPID),
-            m_burst((1 + std::rand()) % maximumTaskBurst) {}
+            m_burst(1 + (std::rand() % maximumTaskBurst)) {}
         ~Task() {}
         int getPriority() {return (nullptr != this) ? this->m_priority : -1;}
         int getPID() {return (nullptr != this) ? this->m_PID : -1;}
