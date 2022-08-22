@@ -42,11 +42,11 @@
 			<Add directory="Headers" />
 			<Add directory="Sources" />
 		</Compiler>
+		<Unit filename="Headers/CPU.h" />
 		<Unit filename="Headers/Queue.h" />
 		<Unit filename="Headers/Task.h" />
-		<Unit filename="Headers/getopt.h" />
+		<Unit filename="Sources/CPU.cpp" />
 		<Unit filename="Sources/Queue.cpp" />
-		<Unit filename="Sources/Task.cpp" />
 		<Unit filename="Sources/main.cpp" />
 		<Extensions>
 			<code_completion />

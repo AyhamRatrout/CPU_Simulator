@@ -2,6 +2,7 @@
 #define CPU_H_INCLUDED
 
 #include <cstdio>
+#include <vector>
 #include "Queue.h"
 
 class CPU
@@ -12,7 +13,8 @@ class CPU
             unsigned int cycleTime,
             size_t maximumCapacity);
         ~CPU() {};
-        virtual void runSimulator(unsigned int simulationDuration);
+        Queue *m_runQueue[];
+        virtual void initializeRunQueue(unsigned int maximumPriority, unsigned int maximumCapacity);
 
     protected:
 
@@ -23,8 +25,7 @@ class CPU
         unsigned int m_cycleTimePassed;
         bool m_cycleIsDone;
         Task *m_currentTask;
-        Queue *m_runQueue[];
-        virtual void createNewTasks();
+
 };
 
 #endif // CPU_H_INCLUDED
