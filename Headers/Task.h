@@ -2,16 +2,17 @@
 #define TASK_H
 
 #include <stdlib.h>
+#include <cstdlib>
 
 static int s_startingPID = -1;
 
 class Task
 {
     public:
-        Task(unsigned int taskPriority, unsigned int taskBurst) :
-            m_priority(rand() % taskPriority),
+        Task(unsigned int maximumTaskPriority, unsigned int maximumTaskBurst) :
+            m_priority(std::rand() % maximumTaskPriority),
             m_PID(++s_startingPID),
-            m_burst(1 + rand() % taskBurst) {}
+            m_burst((1 + std::rand()) % maximumTaskBurst) {}
         ~Task() {}
         int getPriority() {return (nullptr != this) ? this->m_priority : -1;}
         int getPID() {return (nullptr != this) ? this->m_PID : -1;}
