@@ -22,6 +22,7 @@ class CPU
         const unsigned int m_cycleTime;
         unsigned int m_cycleTimePassed;
         bool m_cycleIsDone;
+        Task *m_currentTask;
         Queue *m_runQueue[];
         virtual void createNewTasks();
 };
