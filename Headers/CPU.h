@@ -2,6 +2,8 @@
 #define CPU_H_INCLUDED
 
 #include <cstdio>
+#include <stdlib.h>
+#include <iostream>
 #include <vector>
 #include "Queue.h"
 
@@ -15,12 +17,12 @@ class CPU
         ~CPU() {};
         Queue *m_runQueue[];
         virtual void initializeRunQueue(unsigned int maximumPriority, unsigned int maximumCapacity);
-
+        virtual void createNewTasks();
     protected:
 
     private:
         const unsigned int m_maximumPriority;
-        const unsigned int m_maximumBurst;
+        unsigned int m_maximumBurst;
         const unsigned int m_cycleTime;
         unsigned int m_cycleTimePassed;
         bool m_cycleIsDone;

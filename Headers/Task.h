@@ -23,7 +23,7 @@ class Task
 
     private:
         const unsigned int m_priority;
-        unsigned const int m_PID;
+        const unsigned int m_PID;
         unsigned int m_burst;
 };
 

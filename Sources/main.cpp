@@ -3,20 +3,22 @@
 #include "Task.h"
 #include "CPU.h"
 
-using namespace std;
-
 int main()
 {
-    CPU *cpu = new CPU(3, 10, 10, 3);
-    Task *t1 = new Task(1, 1);
-    Task *t2 = new Task(2, 2);
+    Task *t1 = nullptr;
+    std::cout << t1->getBurst() << std::endl;
     std::cout << t1->getPID() << std::endl;
-    cpu->initializeRunQueue(3, 3);
-    cpu->m_runQueue[0]->enqueue(t1);
-    cpu->m_runQueue[0]->enqueue(t2);
-    std::cout << cpu->m_runQueue[0]->getFront()->getPID() << std::endl;
-    std::cout << cpu->m_runQueue[2]->isEmpty() << std::endl;
-    cpu->m_runQueue[0]->dequeue();
-    std::cout << cpu->m_runQueue[0]->getFront()->getPID() << std::endl;
-
+    std::cout << t1->getPriority() << std::endl;
+    t1 = new Task(5, 10);
+    std::cout << t1->getBurst() << std::endl;
+    std::cout << t1->getPID() << std::endl;
+    std::cout << t1->getPriority() << std::endl;
+    t1->decrementBurst();
+    std::cout << t1->getBurst() << std::endl;
+    std::cout << t1->getPID() << std::endl;
+    std::cout << t1->getPriority() << std::endl;
+    Task *t2 = new Task(5, 10);
+    std::cout << t2->getBurst() << std::endl;
+    std::cout << t2->getPID() << std::endl;
+    std::cout << t2->getPriority() << std::endl;
 }
