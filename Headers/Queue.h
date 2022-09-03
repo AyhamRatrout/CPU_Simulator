@@ -1,12 +1,13 @@
 #ifndef QUEUE_H_INCLUDED
 #define QUEUE_H_INCLUDED
 
+#include <iostream>
 #include "Task.h"
 
 class Queue {
 
     public:
-        Queue(int capacity);
+        Queue(size_t capacity);
         ~Queue() {}
         virtual void enqueue(Task *task);
         virtual void dequeue();
